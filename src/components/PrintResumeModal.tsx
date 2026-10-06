@@ -55,12 +55,14 @@ export const PrintResumeModal: React.FC<PrintResumeModalProps> = ({ isOpen, onCl
             {/* Sidebar Column (Left 4 cols) - styled like the dark teal / deep rose cyan column in the original CV */}
             <div className="md:col-span-4 bg-[#144f54] text-white p-6 rounded-2xl flex flex-col justify-between print:bg-[#144f54] print:text-white">
               <div>
-                {/* Photo / Avatar Placeholder with Elegant Framing */}
-                <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-white/80 shadow-md bg-gradient-to-tr from-pink-300 via-rose-200 to-amber-100 flex items-center justify-center mb-6">
-                  <div className="text-center p-2">
-                    <span className="text-4xl">🧕</span>
-                    <div className="text-[10px] text-pink-900 font-bold mt-1">Sanjida Lamia</div>
-                  </div>
+                {/* Authentic Profile Photo with Elegant Framing */}
+                <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-white/90 shadow-md bg-pink-100 mb-6 relative">
+                  <img
+                    src={CV_DATA.photoUrl}
+                    alt="Sanjida Islam Lamia"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
 
                 {/* CONTACT SECTION */}
@@ -80,6 +82,19 @@ export const PrintResumeModal: React.FC<PrintResumeModalProps> = ({ isOpen, onCl
                         EMAIL
                       </div>
                       <div className="font-medium text-white break-all">{CV_DATA.contact.email}</div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] text-slate-300 uppercase tracking-wider font-semibold">
+                        PORTFOLIO
+                      </div>
+                      <a
+                        href={CV_DATA.contact.portfolioUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-[#6ee7b7] hover:underline break-all"
+                      >
+                        {CV_DATA.contact.portfolio}
+                      </a>
                     </div>
                     <div>
                       <div className="text-[10px] text-slate-300 uppercase tracking-wider font-semibold">
@@ -131,39 +146,39 @@ export const PrintResumeModal: React.FC<PrintResumeModalProps> = ({ isOpen, onCl
 
                 {/* SKILLS SECTION */}
                 <div>
-                  <h4 className="text-xs font-bold tracking-widest text-[#6ee7b7] uppercase border-b border-white/20 pb-1 mb-3">
+                  <h4 className="text-xs font-bold tracking-widest text-[#6ee7b7] uppercase border-b border-white/20 pb-1 mb-2.5">
                     SKILLS
                   </h4>
-                  <ul className="space-y-1.5 text-xs text-white/95">
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#6ee7b7]"></span>
-                      <span>MS Word</span>
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#6ee7b7]"></span>
-                      <span>Excel and PowerPoint</span>
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#6ee7b7]"></span>
-                      <span>Internet & Email</span>
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#6ee7b7]"></span>
-                      <span>Computer Hardware</span>
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#6ee7b7]"></span>
-                      <span>Baking</span>
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#6ee7b7]"></span>
-                      <span>Crafting</span>
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#6ee7b7]"></span>
-                      <span>Teaching / Tutoring</span>
-                    </li>
-                  </ul>
+                  
+                  {/* HARD SKILLS */}
+                  <div className="mb-3.5">
+                    <div className="text-[10px] text-slate-300 uppercase tracking-wider font-bold mb-1.5">
+                      HARD SKILLS
+                    </div>
+                    <ul className="space-y-1 text-xs text-white/95">
+                      {CV_DATA.hardSkills.map((skill, sIdx) => (
+                        <li key={sIdx} className="flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#6ee7b7]"></span>
+                          <span>{skill}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* SOFT SKILLS */}
+                  <div>
+                    <div className="text-[10px] text-slate-300 uppercase tracking-wider font-bold mb-1.5">
+                      SOFT SKILLS
+                    </div>
+                    <div className="grid grid-cols-2 gap-x-2 gap-y-1 text-xs text-white/95">
+                      {CV_DATA.softSkills.map((skill, sIdx) => (
+                        <div key={sIdx} className="flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#6ee7b7]"></span>
+                          <span>{skill}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

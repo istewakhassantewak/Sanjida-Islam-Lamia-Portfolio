@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CV_DATA } from '../data/cvData';
-import { User, Calendar, Heart, Shield, Home, Users, Check, Sparkles, MapPin, Activity } from 'lucide-react';
+import { User, Calendar, Heart, Shield, Home, Users, Check, MapPin, Activity, Flower2, Palette, Award } from 'lucide-react';
 
 export const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'profile' | 'details' | 'values'>('profile');
@@ -26,7 +26,7 @@ export const About: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-pink-500" />
+            <Flower2 className="w-3.5 h-3.5 text-pink-600" />
             <span>Profile & Heritage</span>
           </div>
           <h2 className="font-serif-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
@@ -152,7 +152,7 @@ export const About: React.FC = () => {
 
               <div className="bg-white rounded-3xl p-6 border border-pink-100 shadow-sm">
                 <div className="w-10 h-10 rounded-2xl bg-pink-100 flex items-center justify-center mb-3 text-pink-600">
-                  <Sparkles className="w-5 h-5" />
+                  <Palette className="w-5 h-5" />
                 </div>
                 <h4 className="font-bold text-slate-800 text-base">Creative Dexterity & Baking</h4>
                 <p className="mt-2 text-slate-600 text-sm leading-relaxed">
@@ -264,7 +264,7 @@ export const About: React.FC = () => {
 
             <div className="p-6 rounded-3xl bg-white border border-pink-100 shadow-xs hover:shadow-md transition-shadow">
               <div className="w-12 h-12 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-600 mb-4 font-bold text-lg">
-                ✨
+                🎨
               </div>
               <h4 className="font-serif-display text-lg font-bold text-slate-800">Creative Craftsmanship</h4>
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">

@@ -10,7 +10,7 @@ import { Certifications } from './components/Certifications';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { PrintResumeModal } from './components/PrintResumeModal';
-import { Sparkles, MessageCircle } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function App() {
@@ -58,14 +58,14 @@ export default function App() {
         onClose={() => setIsCVModalOpen(false)}
       />
 
-      {/* Floating Sparkle Wand Button */}
+      {/* Floating Heart Celebration Button */}
       <button
         onClick={triggerCelebration}
         className="fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-gradient-to-tr from-pink-500 to-rose-400 text-white shadow-lg shadow-pink-300/60 hover:scale-110 active:scale-95 transition-all cursor-pointer flex items-center justify-center border-2 border-white"
-        title="Sprinkle Pink Joy ✨"
-        aria-label="Sparkle effect"
+        title="Share Love & Warm Wishes 💖"
+        aria-label="Celebrate effect"
       >
-        <Sparkles className="w-5 h-5 animate-spin-slow" />
+        <Heart className="w-5 h-5 fill-white text-white animate-pulse" />
       </button>
     </div>
   );

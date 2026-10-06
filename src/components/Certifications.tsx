@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CV_DATA, CertificationItem } from '../data/cvData';
-import { Award, CheckCircle2, Cake, Laptop, Sparkles, ShieldCheck, ExternalLink, X } from 'lucide-react';
+import { Award, CheckCircle2, Cake, Laptop, ShieldCheck, ExternalLink, X } from 'lucide-react';
 
 export const Certifications: React.FC = () => {
   const [selectedCert, setSelectedCert] = useState<CertificationItem | null>(null);

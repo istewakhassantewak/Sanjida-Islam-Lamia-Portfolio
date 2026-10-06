@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, FileText, Menu, X, Flower, Heart, Phone, Mail } from 'lucide-react';
+import { Flower2, FileText, Menu, X, Flower, Heart, Phone, Mail } from 'lucide-react';
 
 interface NavbarProps {
   onOpenCVModal: () => void;
@@ -45,10 +45,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCVModal, petalsEnabled, on
           </div>
           <div>
             <span className="font-serif-display font-bold text-lg sm:text-xl text-slate-800 tracking-tight group-hover:text-pink-600 transition-colors">
-              Sanjida <span className="text-pink-500 font-medium">Lamia</span>
+              Sanjida Islam <span className="text-pink-500 font-medium">Lamia</span>
             </span>
             <span className="hidden sm:block text-[10px] text-pink-700/70 tracking-widest uppercase font-semibold">
-              Social Work & Creative Portfolio
+              Motivated Honours scholar in Social Work
             </span>
           </div>
         </a>
@@ -79,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCVModal, petalsEnabled, on
             title={petalsEnabled ? 'Pause floating petals' : 'Enable floating petals'}
             aria-label="Toggle cherry blossom petals"
           >
-            <Sparkles className="w-4 h-4" />
+            <Flower2 className="w-4 h-4" />
           </button>
 
           {/* View Printable CV */}
@@ -99,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCVModal, petalsEnabled, on
             className="p-1.5 rounded-full bg-pink-50 text-pink-500 border border-pink-200"
             aria-label="Toggle petals"
           >
-            <Sparkles className="w-4 h-4" />
+            <Flower2 className="w-4 h-4" />
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

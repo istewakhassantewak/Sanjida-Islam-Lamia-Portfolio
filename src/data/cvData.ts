@@ -47,7 +47,8 @@ export interface SkillCategory {
 export const CV_DATA = {
   name: "Sanjida Islam Lamia",
   banglaName: "সঞ্জিদা ইসলাম লামিয়া",
-  headline: "Honours Student in Social Work · Commerce Background",
+  photoUrl: "/Lamia.png",
+  headline: "Honours Student, Social Work | Commerce Background",
   subHeadline: "Passionate Home Tutor, Creative Artisan & Certified Tech Practitioner based in Cumilla, Bangladesh.",
   profileSummary:
     "Motivated and disciplined student currently pursuing an Honours degree in Social Work, with a Commerce background and a consistently strong academic record. Experienced in tutoring and creative crafts, with practical computer skills and a basic baking certification. Eager to apply dedication, communication and a service-minded outlook in a professional role.",
@@ -55,6 +56,8 @@ export const CV_DATA = {
     phone: "01817410805",
     intlPhone: "+880 1817410805",
     email: "sanjidalamia01@gmail.com",
+    portfolio: "sanjida-islam-lamia-portfolio.vercel.app",
+    portfolioUrl: "https://sanjida-islam-lamia-portfolio.vercel.app",
     address: {
       house: "House 191, Nanua Dighir Purbo Par",
       area: "Bajrapur (Part), Ward No. 12",
@@ -205,6 +208,21 @@ export const CV_DATA = {
       color: "from-rose-500 to-pink-600"
     }
   ] as CertificationItem[],
+  hardSkills: [
+    "MS Word",
+    "Excel and PowerPoint",
+    "Internet & Email",
+    "Computer Hardware",
+    "Baking",
+    "Crafting",
+    "Teaching / Tutoring"
+  ],
+  softSkills: [
+    "Communication",
+    "Teamwork",
+    "Adaptability",
+    "Problem-Solving"
+  ],
   skillCategories: [
     {
       category: "Office Productivity & Tech",
@@ -219,7 +237,7 @@ export const CV_DATA = {
     },
     {
       category: "Creative Arts & Confectionery",
-      iconName: "Sparkles",
+      iconName: "Palette",
       description: "Passionate artisan with formal baking credentials from The Cake Fairy and skilled handiwork.",
       skills: [
         { name: "Baking & Cake Decorating (Certified)", level: 90, status: "Certified Artisan" },
@@ -229,14 +247,14 @@ export const CV_DATA = {
       ]
     },
     {
-      category: "Education & Social Work",
+      category: "Education, Mentorship & Soft Skills",
       iconName: "HeartHandshake",
-      description: "Pursuing Honours in Social Work with extensive home tutoring experience.",
+      description: "Pursuing Honours in Social Work with rich communication, adaptability, and teamwork.",
       skills: [
-        { name: "Private Teaching & Concept Explaining", level: 92, status: "Experienced" },
-        { name: "Active Listening & Empathetic Communication", level: 95, status: "Core Strength" },
-        { name: "Patience & Student Motivation", level: 95, status: "Core Strength" },
-        { name: "Social Welfare Understanding", level: 88, status: "Honours Scholar" }
+        { name: "Communication & Empathy", level: 95, status: "Core Strength" },
+        { name: "Teamwork & Collaboration", level: 92, status: "High Proficiency" },
+        { name: "Adaptability & Patience", level: 95, status: "Core Strength" },
+        { name: "Problem-Solving & Teaching", level: 90, status: "Proficient" }
       ]
     }
   ] as SkillCategory[],

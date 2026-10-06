@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flower, Heart, ArrowUp, Mail, Phone, MapPin, Sparkles } from 'lucide-react';
+import { Flower, Heart, ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
 import { CV_DATA } from '../data/cvData';
 
 export const Footer: React.FC = () => {

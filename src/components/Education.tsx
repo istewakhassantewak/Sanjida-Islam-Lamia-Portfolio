@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CV_DATA, EducationItem } from '../data/cvData';
-import { GraduationCap, Award, Calendar, Building2, CheckCircle2, Star, Sparkles, ChevronRight } from 'lucide-react';
+import { GraduationCap, Award, Calendar, Building2, CheckCircle2, Star, ChevronRight } from 'lucide-react';
 
 export const Education: React.FC = () => {
   const [selectedEduId, setSelectedEduId] = useState<string>(CV_DATA.education[0].id);
@@ -173,7 +173,7 @@ export const Education: React.FC = () => {
                     </h5>
                     {selectedItem.highlights.map((highlight, hIdx) => (
                       <div key={hIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                        <Sparkles className="w-4 h-4 text-pink-500 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-pink-500 shrink-0 mt-0.5" />
                         <span>{highlight}</span>
                       </div>
                     ))}

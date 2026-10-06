@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CV_DATA } from '../data/cvData';
-import { BookOpen, Scissors, Heart, Sparkles, CheckCircle2, Clock, MapPin, Award, Users } from 'lucide-react';
+import { BookOpen, Scissors, Heart, CheckCircle2, Clock, MapPin, Award, Users, Smile } from 'lucide-react';
 
 export const Experience: React.FC = () => {
   return (
@@ -152,7 +152,7 @@ export const Experience: React.FC = () => {
         <div className="mt-12 p-6 rounded-3xl bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 text-white shadow-md shadow-pink-200 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center shrink-0">
-              <Sparkles className="w-6 h-6 text-white" />
+              <Heart className="w-6 h-6 text-white fill-white/80" />
             </div>
             <div>
               <h4 className="font-serif-display text-lg sm:text-xl font-bold">

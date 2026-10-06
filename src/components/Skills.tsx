@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CV_DATA } from '../data/cvData';
-import { Laptop, Sparkles, HeartHandshake, CheckCircle2, Award, Cake, BookOpen, Scissors, Cpu, FileSpreadsheet, Globe, FileText } from 'lucide-react';
+import { Laptop, Palette, HeartHandshake, CheckCircle2, Award, Cake, BookOpen, Scissors, Cpu, FileSpreadsheet, Globe, FileText, MessageCircle, Users, Sparkle, Lightbulb, Compass, Shuffle } from 'lucide-react';
 
 export const Skills: React.FC = () => {
   const [activeCategoryIndex, setActiveCategoryIndex] = useState<number>(0);
@@ -10,12 +10,12 @@ export const Skills: React.FC = () => {
     switch (iconName) {
       case 'Laptop':
         return Laptop;
-      case 'Sparkles':
-        return Sparkles;
+      case 'Palette':
+        return Palette;
       case 'HeartHandshake':
         return HeartHandshake;
       default:
-        return Sparkles;
+        return Award;
     }
   };
 
@@ -25,7 +25,7 @@ export const Skills: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-pink-500" />
+            <Award className="w-3.5 h-3.5 text-pink-600" />
             <span>Core Competencies</span>
           </div>
           <h2 className="font-serif-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
@@ -110,69 +110,115 @@ export const Skills: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Highlighted Visual Skills Chips (All 7 CV Skills) */}
-        <div className="mt-12">
-          <div className="text-center mb-6">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-pink-700">
-              Quick Highlights from CV Document
-            </h4>
+        {/* Dual Section: Hard Skills & Soft Skills from Exact CV */}
+        <div className="mt-12 space-y-8">
+          {/* HARD SKILLS */}
+          <div>
+            <div className="text-center mb-5">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-pink-700">
+                Hard Skills (Official CV)
+              </h4>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 text-center">
+              <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
+                <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
+                  <FileText className="w-5 h-5" />
+                </div>
+                <span className="font-bold text-xs text-slate-800">MS Word</span>
+                <span className="text-[10px] text-slate-500 mt-0.5">Docs & Formats</span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
+                <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
+                  <FileSpreadsheet className="w-5 h-5" />
+                </div>
+                <span className="font-bold text-xs text-slate-800">Excel & PPT</span>
+                <span className="text-[10px] text-slate-500 mt-0.5">Data & Slides</span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
+                <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
+                  <Globe className="w-5 h-5" />
+                </div>
+                <span className="font-bold text-xs text-slate-800">Internet & Email</span>
+                <span className="text-[10px] text-slate-500 mt-0.5">Digital Comms</span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
+                <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
+                  <Cpu className="w-5 h-5" />
+                </div>
+                <span className="font-bold text-xs text-slate-800">PC Hardware</span>
+                <span className="text-[10px] text-slate-500 mt-0.5">Grade A+ (CVGC)</span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
+                <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
+                  <Cake className="w-5 h-5" />
+                </div>
+                <span className="font-bold text-xs text-slate-800">Baking</span>
+                <span className="text-[10px] text-slate-500 mt-0.5">The Cake Fairy</span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
+                <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
+                  <Scissors className="w-5 h-5" />
+                </div>
+                <span className="font-bold text-xs text-slate-800">Crafting</span>
+                <span className="text-[10px] text-slate-500 mt-0.5">Handmade Art</span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center col-span-2 sm:col-span-3 lg:col-span-1">
+                <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
+                  <BookOpen className="w-5 h-5" />
+                </div>
+                <span className="font-bold text-xs text-slate-800">Tutoring</span>
+                <span className="text-[10px] text-slate-500 mt-0.5">Private Teaching</span>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 text-center">
-            <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
-              <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
-                <FileText className="w-5 h-5" />
-              </div>
-              <span className="font-bold text-xs text-slate-800">MS Word</span>
-              <span className="text-[10px] text-slate-500 mt-0.5">Docs & Formats</span>
+          {/* SOFT SKILLS (Newly added to CV) */}
+          <div className="pt-4 border-t border-pink-100/80">
+            <div className="text-center mb-5">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-pink-700">
+                Soft Skills (Official CV)
+              </h4>
             </div>
 
-            <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
-              <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
-                <FileSpreadsheet className="w-5 h-5" />
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center max-w-3xl mx-auto">
+              <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
+                <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
+                  <MessageCircle className="w-5 h-5" />
+                </div>
+                <span className="font-bold text-sm text-slate-800">Communication</span>
+                <span className="text-xs text-pink-600/80 mt-0.5 font-medium">Empathetic & Clear</span>
               </div>
-              <span className="font-bold text-xs text-slate-800">Excel & PPT</span>
-              <span className="text-[10px] text-slate-500 mt-0.5">Data & Slides</span>
-            </div>
 
-            <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
-              <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
-                <Globe className="w-5 h-5" />
+              <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
+                <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
+                  <Users className="w-5 h-5" />
+                </div>
+                <span className="font-bold text-sm text-slate-800">Teamwork</span>
+                <span className="text-xs text-pink-600/80 mt-0.5 font-medium">Collaborative Spirit</span>
               </div>
-              <span className="font-bold text-xs text-slate-800">Internet & Email</span>
-              <span className="text-[10px] text-slate-500 mt-0.5">Digital Comms</span>
-            </div>
 
-            <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
-              <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
-                <Cpu className="w-5 h-5" />
+              <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
+                <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
+                  <Shuffle className="w-5 h-5" />
+                </div>
+                <span className="font-bold text-sm text-slate-800">Adaptability</span>
+                <span className="text-xs text-pink-600/80 mt-0.5 font-medium">Flexible & Patient</span>
               </div>
-              <span className="font-bold text-xs text-slate-800">PC Hardware</span>
-              <span className="text-[10px] text-slate-500 mt-0.5">Grade A+ (CVGC)</span>
-            </div>
 
-            <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
-              <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
-                <Cake className="w-5 h-5" />
+              <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
+                <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
+                  <Lightbulb className="w-5 h-5" />
+                </div>
+                <span className="font-bold text-sm text-slate-800">Problem-Solving</span>
+                <span className="text-xs text-pink-600/80 mt-0.5 font-medium">Creative & Practical</span>
               </div>
-              <span className="font-bold text-xs text-slate-800">Baking</span>
-              <span className="text-[10px] text-slate-500 mt-0.5">The Cake Fairy</span>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center">
-              <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
-                <Scissors className="w-5 h-5" />
-              </div>
-              <span className="font-bold text-xs text-slate-800">Crafting</span>
-              <span className="text-[10px] text-slate-500 mt-0.5">Handmade Art</span>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-300 hover:shadow-xs transition-all flex flex-col items-center col-span-2 sm:col-span-3 lg:col-span-1">
-              <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center mb-2">
-                <BookOpen className="w-5 h-5" />
-              </div>
-              <span className="font-bold text-xs text-slate-800">Tutoring</span>
-              <span className="text-[10px] text-slate-500 mt-0.5">Private Teaching</span>
             </div>
           </div>
         </div>

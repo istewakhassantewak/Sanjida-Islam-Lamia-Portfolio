@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CV_DATA } from '../data/cvData';
 import { AnimatedGirl } from './AnimatedGirl';
-import { Mail, Phone, MapPin, Download, Heart, ArrowDown, Award, CheckCircle2, Sparkles, BookOpen } from 'lucide-react';
+import { Mail, Phone, MapPin, Download, Heart, ArrowDown, Award, CheckCircle2, BookOpen, GraduationCap } from 'lucide-react';
 
 interface HeroProps {
   onOpenCVModal: () => void;
@@ -32,8 +32,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCVModal }) => {
             className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             {/* Soft Kicker */}
-            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100/90 text-pink-700 text-xs font-semibold mb-4 border border-pink-200/80 shadow-2xs">
-              <Sparkles className="w-3.5 h-3.5 text-pink-500" />
+            <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-100/90 text-pink-700 text-xs font-semibold mb-4 border border-pink-200/80 shadow-2xs">
+              <GraduationCap className="w-3.5 h-3.5 text-pink-600" />
               <span>Dedicated Scholar & Creative Artisan</span>
               <span className="text-pink-300">·</span>
               <span>Cumilla, Bangladesh</span>
@@ -108,7 +108,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCVModal }) => {
                 href="#education"
                 className="px-4 py-3 rounded-full text-slate-600 hover:text-pink-600 text-sm font-medium transition-colors flex items-center gap-1"
               >
-                <span>Explore CV Details</span>
+                <span>Explore Details</span>
                 <ArrowDown className="w-3.5 h-3.5" />
               </a>
             </div>

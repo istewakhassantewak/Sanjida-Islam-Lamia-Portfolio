@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CV_DATA } from '../data/cvData';
-import { Mail, Phone, MapPin, Send, MessageSquare, Copy, Check, Heart, Sparkles, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, Copy, Check, Heart, ExternalLink, Globe } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export const Contact: React.FC = () => {
@@ -136,6 +136,37 @@ export const Contact: React.FC = () => {
               </div>
             </div>
 
+            {/* Portfolio Card */}
+            <div className="p-6 rounded-3xl bg-pink-50/50 border border-pink-200/80 shadow-xs">
+              <div className="flex items-center justify-between mb-3">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-400 text-white flex items-center justify-center shadow-xs">
+                  <Globe className="w-6 h-6" />
+                </div>
+                <button
+                  onClick={() => handleCopy(CV_DATA.contact.portfolio, 'portfolio')}
+                  className="p-2 rounded-xl bg-white text-pink-600 border border-pink-200 hover:bg-pink-100 transition-colors text-xs font-medium flex items-center gap-1 cursor-pointer"
+                  title="Copy Portfolio URL"
+                >
+                  {copiedType === 'portfolio' ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
+                  <span>{copiedType === 'portfolio' ? 'Copied' : 'Copy'}</span>
+                </button>
+              </div>
+              <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                Live Portfolio on Vercel
+              </div>
+              <a
+                href={CV_DATA.contact.portfolioUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm sm:text-base font-bold text-slate-900 hover:text-pink-600 transition-colors block mt-1 break-all"
+              >
+                {CV_DATA.contact.portfolio}
+              </a>
+              <div className="text-xs text-slate-500 mt-1">
+                Official personal portfolio link from CV
+              </div>
+            </div>
+
             {/* Address Card */}
             <div className="p-6 rounded-3xl bg-pink-50/50 border border-pink-200/80 shadow-xs">
               <div className="flex items-center gap-3 mb-3">
@@ -194,7 +225,7 @@ export const Contact: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                        Your Name *
+                        Your Name
                       </label>
                       <input
                         type="text"
@@ -207,7 +238,7 @@ export const Contact: React.FC = () => {
                     </div>
                     <div>
                       <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                        Your Email *
+                        Your Email
                       </label>
                       <input
                         type="email"
@@ -239,7 +270,7 @@ export const Contact: React.FC = () => {
 
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                      Your Message *
+                      Your Message
                     </label>
                     <textarea
                       required
