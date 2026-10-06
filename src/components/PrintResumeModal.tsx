@@ -32,13 +32,23 @@ export const PrintResumeModal: React.FC<PrintResumeModalProps> = ({ isOpen, onCl
             </span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
+            <a
+              href="/Sanjida Islam Lamia CV.pdf"
+              download="Sanjida Islam Lamia CV.pdf"
+              className="px-4 py-2 rounded-full bg-pink-500 hover:bg-pink-600 text-white font-semibold text-xs shadow-xs transition-colors flex items-center gap-1.5 cursor-pointer"
+              title="Download official PDF CV"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Download PDF</span>
+            </a>
             <button
               onClick={handlePrint}
-              className="px-4 py-2 rounded-full bg-pink-500 hover:bg-pink-600 text-white font-semibold text-xs shadow-xs transition-colors flex items-center gap-1.5 cursor-pointer"
+              className="px-4 py-2 rounded-full bg-slate-100 hover:bg-pink-50 text-slate-700 hover:text-pink-600 font-semibold text-xs border border-slate-200 transition-colors flex items-center gap-1.5 cursor-pointer"
+              title="Print CV or Save via browser"
             >
               <Printer className="w-3.5 h-3.5" />
-              <span>Print / Save as PDF</span>
+              <span>Print CV</span>
             </button>
             <button
               onClick={onClose}

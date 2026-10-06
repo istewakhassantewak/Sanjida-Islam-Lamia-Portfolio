@@ -11,22 +11,37 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenCVModal, petalsEnabled, onTogglePetals }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      const sectionIds = ['about', 'education', 'skills', 'experience', 'certifications', 'contact'];
+      const scrollPosition = window.scrollY + 160;
+
+      let current = '';
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollPosition) {
+          current = id;
+        }
+      }
+      setActiveSection(current);
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { label: 'About', href: '#about' },
-    { label: 'Education', href: '#education' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Certifications', href: '#certifications' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'About', href: '#about', id: 'about' },
+    { label: 'Education', href: '#education', id: 'education' },
+    { label: 'Skills', href: '#skills', id: 'skills' },
+    { label: 'Experience', href: '#experience', id: 'experience' },
+    { label: 'Certifications', href: '#certifications', id: 'certifications' },
+    { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   return (
@@ -53,17 +68,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCVModal, petalsEnabled, on
           </div>
         </a>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm font-medium text-slate-600 hover:text-pink-600 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-pink-400 hover:after:w-full after:transition-all"
-            >
-              {link.label}
-            </a>
-          ))}
+        {/* Desktop Navigation Links with Active Indicator */}
+        <nav className="hidden md:flex items-center gap-1.5 p-1 bg-white/70 backdrop-blur-md rounded-full border border-pink-100 shadow-2xs">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                className={`relative px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
+                  isActive
+                    ? 'text-pink-700 font-bold bg-pink-100 shadow-2xs'
+                    : 'text-slate-600 hover:text-pink-600 hover:bg-pink-50/70'
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Right Action Buttons */}
@@ -120,17 +142,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCVModal, petalsEnabled, on
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white/95 backdrop-blur-xl border-b border-pink-200 overflow-hidden px-4 py-4"
           >
-            <nav className="flex flex-col gap-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-lg text-slate-700 hover:bg-pink-50 hover:text-pink-600 font-medium text-sm transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
+            <nav className="flex flex-col gap-2">
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.id;
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`px-3.5 py-2.5 rounded-xl font-medium text-sm transition-colors flex items-center justify-between ${
+                      isActive
+                        ? 'bg-pink-500 text-white font-bold shadow-xs'
+                        : 'text-slate-700 hover:bg-pink-50 hover:text-pink-600'
+                    }`}
+                  >
+                    <span>{link.label}</span>
+                    {isActive && <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>}
+                  </a>
+                );
+              })}
               <div className="pt-2 border-t border-pink-100 flex flex-col gap-2">
                 <button
                   onClick={() => {

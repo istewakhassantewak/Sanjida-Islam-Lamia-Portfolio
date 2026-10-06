@@ -46,7 +46,7 @@ export interface SkillCategory {
 
 export const CV_DATA = {
   name: "Sanjida Islam Lamia",
-  banglaName: "সঞ্জিদা ইসলাম লামিয়া",
+  banglaName: "সানজিদা ইসলাম লামিয়া",
   photoUrl: "/Lamia.png",
   headline: "Honours Student, Social Work | Commerce Background",
   subHeadline: "Passionate Home Tutor, Creative Artisan & Certified Tech Practitioner based in Cumilla, Bangladesh.",
